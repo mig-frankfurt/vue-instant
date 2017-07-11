@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="https://unpkg.com/vue-instant@0.0.12/dist/vue-instant.css">
+    <link rel="stylesheet" href="./vue-instant.css">
 </head>
 
 <body>
     <div id="app">
         <label>{{selectedEvent}}</label>
-        <vue-instant :suggestion-attribute="suggestionAttribute" v-model="value" :disabled="false"  @input="changed" @click-input="clickInput" @click-button="clickButton" @selected="selected"  @enter="enter" @key-up="keyUp" @key-down="keyDown" @key-right="keyRight" @clear="clear"  @escape="escape" :show-autocomplete="true" :autofocus="false" :suggestions="suggestions" name="customName" placeholder="custom placeholder" type="google"></vue-instant>
+        <vue-instant :suggestion-attribute="suggestionAttribute" :suggestion-displayed-attributes="[{ name: 'original_title', displayAs: '%var%' }, { name: 'original_language', displayAs: ' (%var%)' }]" v-model="value" :disabled="false"  @input="changed" @click-input="clickInput" @click-button="clickButton" @selected="selected"  @enter="enter" @key-up="keyUp" @key-down="keyDown" @key-right="keyRight" @clear="clear"  @escape="escape" :show-autocomplete="true" :autofocus="false" :suggestions="suggestions" name="customName" placeholder="custom placeholder" type="amazon"></vue-instant>
     </div>
     <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-clickaway@2.1.0/dist/vue-clickaway.js"></script>
-    <script src="https://unpkg.com/vue-instant@0.0.12/dist/vue-instant.browser.js"></script>
+    <script src="./vue-instant.browser.js"></script>
     <script src="https://unpkg.com/axios@0.15.3/dist/axios.min.js"></script>
     <script>
     new Vue({
